@@ -31,7 +31,12 @@ function onTargetImgClick(event) {
   const instance = basicLightbox.create(
     `
        <img src="${srcBigImg}" width="800" height="600" />
-     `
+     `,
+    {
+      onClose: (instance) => {
+        window.removeEventListener("keydown", onPressKeyEsc);
+      },
+    }
   );
 
   // ---------- Варіант з кнопкою "Close" ----------
@@ -59,7 +64,6 @@ function onTargetImgClick(event) {
   function onPressKeyEsc(event) {
     if (event.code === "Escape") {
       instance.close();
-      window.removeEventListener("keydown", onPressKeyEsc);
     }
   }
 }
