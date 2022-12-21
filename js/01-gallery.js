@@ -53,13 +53,13 @@ function onTargetImgClick(event) {
   instance.show();
 
   if (instance.visible()) {
-    window.addEventListener("keydown", onTargetKeyPressEsc);
+    window.addEventListener("keydown", onPressKeyEsc);
   }
 
-  function onTargetKeyPressEsc(event) {
+  function onPressKeyEsc(event) {
     if (event.code === "Escape") {
       instance.close();
-      window.removeEventListener("keydown", onTargetKeyPressEsc);
+      window.removeEventListener("keydown", onPressKeyEsc);
     }
   }
 }
