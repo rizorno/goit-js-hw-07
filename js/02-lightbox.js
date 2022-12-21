@@ -18,9 +18,9 @@ const list = galleryItems
 // listGallery.innerHTML = list;
 listGallery.insertAdjacentHTML("beforeend", list);
 
-listGallery.addEventListener("click", onOpenModal);
+listGallery.addEventListener("click", onTargetImgClick);
 
-function onOpenModal(event) {
+function onTargetImgClick(event) {
   event.preventDefault();
 
   const lightbox = new SimpleLightbox(".gallery a", {

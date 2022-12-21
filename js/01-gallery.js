@@ -17,9 +17,9 @@ const list = galleryItems
 // listGallery.innerHTML = list;
 listGallery.insertAdjacentHTML("beforeend", list);
 
-listGallery.addEventListener("click", onOpenModal);
+listGallery.addEventListener("click", onTargetImgClick);
 
-function onOpenModal(event) {
+function onTargetImgClick(event) {
   event.preventDefault();
 
   if (!event.target.classList.contains("gallery__image")) {
@@ -53,13 +53,13 @@ function onOpenModal(event) {
   instance.show();
 
   if (instance.visible()) {
-    window.addEventListener("keydown", onPressEsc);
+    window.addEventListener("keydown", onTargetKeyPressEsc);
   }
 
-  function onPressEsc(event) {
+  function onTargetKeyPressEsc(event) {
     if (event.code === "Escape") {
       instance.close();
-      window.removeEventListener("keydown", onPressEsc);
+      window.removeEventListener("keydown", onTargetKeyPressEsc);
     }
   }
 }
